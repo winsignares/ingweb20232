@@ -3,3 +3,5 @@ Paso 2: virtualenv venv / python -m virtualenv venv
 Paso 3: cd venv ; cd Scripts; activate
 paso 4: cd ..;  cd ..
 paso 5: pip install flask flask-sqlalchemy flask-marshmallow marshmallow pymysql sqlalchemy
+Paso 6: pip freeze > requirements.txt
+Paso 7: pip install -r requirements.txt
