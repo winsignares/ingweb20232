@@ -1,1 +1,2 @@
 Paso 1: pip install virtualenv
+Paso 2: virtualenv venv / python -m virtualenv venv
