@@ -1,2 +1,2 @@
 Paso 1: pip install virtualenv
-los horizontales
+Paso 2: virtualenv venv
