@@ -1,1 +1,1 @@
-123 no soy jeider
+Paso 1: pip install virtualenv
