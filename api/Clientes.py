@@ -30,3 +30,10 @@ def updatecliente():
     ncliente.nombre = nombre
     db.session.commit()
     return "Datos Actualizado con exitos"
+
+@ruta_cliente.route("/deletecliente/<id>", methods=["GET"])
+def deletecliente(id):
+    cliente = Clientes.query.get(id)
+    db.session.delete(cliente)
+    db.session.commit()
+    return jsonify(cliente_schema.dump(cliente))
