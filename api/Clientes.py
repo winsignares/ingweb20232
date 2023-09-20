@@ -1,5 +1,5 @@
-from flask import Blueprint, jsonify
-
+from flask import Blueprint, jsonify, request,json
+from config.db import db, app, ma
 from models.Clientes import Clientes, ClienteSchema
 
 ruta_cliente = Blueprint("ruta_cliente",__name__)
@@ -13,3 +13,11 @@ def clientes():
     resultall = Clientes.query.all()
     result = clientes_schema.dump(resultall)
     return jsonify(result)
+
+@ruta_cliente.route("/savecliente", methods=["POST"])
+def savecliente():
+    nombre = request.json['nombre']
+    new_cliente = Clientes(nombre)
+    db.session.add(new_cliente)
+    db.session.commit()
+    return "Datos guardados con exitos"
