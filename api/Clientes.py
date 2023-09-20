@@ -21,3 +21,12 @@ def savecliente():
     db.session.add(new_cliente)
     db.session.commit()
     return "Datos guardados con exitos"
+
+@ruta_cliente.route("/updatecliente", methods=["PUT"])
+def updatecliente():
+    id = request.json['id']
+    nombre = request.json['nombre']
+    ncliente = Clientes.query.get(id) #Select * from Cliente where id = id
+    ncliente.nombre = nombre
+    db.session.commit()
+    return "Datos Actualizado con exitos"
