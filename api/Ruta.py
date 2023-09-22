@@ -27,9 +27,6 @@ def ruta():
 
 
 #Hector actualizar Ruta
-
-
-
 @ruta_ruta.route("/updateruta", methods=["PUT"])
 def updatecliente():
     id = request.json['id']
@@ -39,6 +36,8 @@ def updatecliente():
     
     db.session.commit()
     return "Datos Actualizado con exitos"
+
+
 
 
 
