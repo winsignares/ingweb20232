@@ -11,4 +11,4 @@ clientes_schema = ClienteSchema(many=True)
 def clientes():
     resultall = Clientes.query.all()
     result = clientes_schema.dump(resultall)
-    return jsonify(result)
+    return jsonify(result) 
