@@ -5,7 +5,7 @@ class Ruta(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     idcliente = db.Column(db.Integer, db.ForeignKey('tblCliente.id'))
-
+    
     def __init__(self, idcliente):
         self.idcliente = idcliente
 

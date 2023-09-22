@@ -13,3 +13,35 @@ def ruta():
     resultall = Ruta.query.all()# Select * from Ruta;
     result = rutas_schema.dump(resultall)
     return jsonify(result)
+#Ellery save rutas
+
+
+
+
+
+
+
+
+
+
+#Hector actualizar Ruta
+
+
+
+
+
+
+
+
+
+
+#Cammpo Eliminar
+
+
+
+
+
+
+
+
+
