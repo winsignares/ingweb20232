@@ -12,6 +12,13 @@ class Ruta(db.Model):
     def __init__(self, idcliente):
         self.idcliente = idcliente
 
+    def __init__(self, latitud):
+        self.latitud = latitud
+
+    def __init__(self, longitud):
+        self.longitud = longitud
+
+
 with app.app_context():
     db.create_all()
 
