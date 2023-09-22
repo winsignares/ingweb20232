@@ -33,9 +33,10 @@ def updatecliente():
     latitud = latitud.json['latitud']
     longitud = longitud.json['latitud']
     nruta = ruta.query.get(id) #Select * from ruta where id = id
-    
+    nruta.longitud=longitud
+    nruta.latitud=latitud
     db.session.commit()
-    return "Datos Actualizado con exitos"
+    return "Datos Actualizado con exitos."
 
 
 
