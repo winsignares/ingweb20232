@@ -16,16 +16,13 @@ def ruta():
 
 
 #Ellery save rutas
-
-
-
-
-
-
-
-
-
-
+@ruta_ruta.route("/saveruta", methods=["POST"])
+def saveruta():
+    data = request.get_json()
+    new_ruta = Ruta(data)
+    db.session.add(new_ruta)
+    db.session.commit()
+    return "Ruta guardada con éxito"
 #Hector actualizar Ruta
 @ruta_ruta.route("/updateruta", methods=["PUT"])
 def updatecliente():
@@ -48,7 +45,12 @@ def updatecliente():
 #Cammpo Eliminar
 
 
-
+@ruta_ruta.route("/deleteruta/<id>", methods=["GET"])
+def deleteruta(id):
+    ruta = ruta.query.get(id)
+    db.session.delete(ruta)
+    db.session.commit()
+    return jsonify(ruta_schema.dump(ruta))
 
 
 
