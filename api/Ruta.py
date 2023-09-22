@@ -13,6 +13,7 @@ def ruta():
     resultall = Ruta.query.all()# Select * from Ruta;
     result = rutas_schema.dump(resultall)
     return jsonify(result)
+<<<<<<< HEAD
 
 @ruta_ruta.route("/updateruta", methods=["PUT"])
 def updatecliente():
@@ -23,4 +24,37 @@ def updatecliente():
     
     db.session.commit()
     return "Datos Actualizado con exitos"
+=======
+#Ellery save rutas
+
+
+
+
+
+
+
+
+
+
+#Hector actualizar Ruta
+
+
+
+
+
+
+
+
+
+
+#Cammpo Eliminar
+
+
+
+
+
+
+
+
+>>>>>>> 756de472d77f8bc9e2fac12da76c8e585356df60
 
