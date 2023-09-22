@@ -18,4 +18,4 @@ with app.app_context():
 
 class RutaSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'idcliente')
+        fields = ('id', 'idcliente',"latitud","longitud")
