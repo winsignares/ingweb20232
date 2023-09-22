@@ -13,18 +13,8 @@ def ruta():
     resultall = Ruta.query.all()# Select * from Ruta;
     result = rutas_schema.dump(resultall)
     return jsonify(result)
-<<<<<<< HEAD
 
-@ruta_ruta.route("/updateruta", methods=["PUT"])
-def updatecliente():
-    id = request.json['id']
-    latitud = latitud.json['latitud']
-    longitud = longitud.json['latitud']
-    ncliente = ruta.query.get(id) #Select * from ruta where id = id
-    
-    db.session.commit()
-    return "Datos Actualizado con exitos"
-=======
+
 #Ellery save rutas
 
 
@@ -40,7 +30,15 @@ def updatecliente():
 
 
 
-
+@ruta_ruta.route("/updateruta", methods=["PUT"])
+def updatecliente():
+    id = request.json['id']
+    latitud = latitud.json['latitud']
+    longitud = longitud.json['latitud']
+    nruta = ruta.query.get(id) #Select * from ruta where id = id
+    
+    db.session.commit()
+    return "Datos Actualizado con exitos"
 
 
 
@@ -56,5 +54,4 @@ def updatecliente():
 
 
 
->>>>>>> 756de472d77f8bc9e2fac12da76c8e585356df60
 
