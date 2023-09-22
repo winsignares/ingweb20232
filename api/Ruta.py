@@ -13,3 +13,14 @@ def ruta():
     resultall = Ruta.query.all()# Select * from Ruta;
     result = rutas_schema.dump(resultall)
     return jsonify(result)
+
+@ruta_ruta.route("/updateruta", methods=["PUT"])
+def updatecliente():
+    id = request.json['id']
+    latitud = latitud.json['latitud']
+    longitud = longitud.json['latitud']
+    ncliente = ruta.query.get(id) #Select * from ruta where id = id
+    
+    db.session.commit()
+    return "Datos Actualizado con exitos"
+
