@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request,json
 from config.db import db, app, ma
 from models.Ruta import Ruta, RutaSchema
 
@@ -13,6 +13,8 @@ def ruta():
     resultall = Ruta.query.all()# Select * from Ruta;
     result = rutas_schema.dump(resultall)
     return jsonify(result)
+
+
 #Ellery save rutas
 @ruta_ruta.route("/saveruta", methods=["POST"])
 def saveruta():
@@ -22,8 +24,15 @@ def saveruta():
     db.session.commit()
     return "Ruta guardada con éxito"
 #Hector actualizar Ruta
-
-
+@ruta_ruta.route("/updateruta", methods=["PUT"])
+def updatecliente():
+    id = request.json['id']
+    latitud = latitud.json['latitud']
+    longitud = longitud.json['latitud']
+    nruta = ruta.query.get(id) #Select * from ruta where id = id
+    
+    db.session.commit()
+    return "Datos Actualizado con exitos"
 
 
 
