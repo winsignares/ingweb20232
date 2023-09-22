@@ -37,3 +37,5 @@ def deletecliente(id):
     db.session.delete(cliente)
     db.session.commit()
     return jsonify(cliente_schema.dump(cliente))
+ 
+ 
