@@ -44,7 +44,12 @@ def updatecliente():
 #Cammpo Eliminar
 
 
-
+@ruta_ruta.route("/deleteruta/<id>", methods=["GET"])
+def deleteruta(id):
+    ruta = ruta.query.get(id)
+    db.session.delete(ruta)
+    db.session.commit()
+    return jsonify(ruta_schema.dump(ruta))
 
 
 

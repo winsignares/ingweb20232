@@ -12,6 +12,9 @@ clientes_schema = ClienteSchema(many=True)
 def clientes():
     resultall = Clientes.query.all()
     result = clientes_schema.dump(resultall)
+<<<<<<< HEAD
+    return jsonify(result) 
+=======
     return jsonify(result)
 
 @ruta_cliente.route("/savecliente", methods=["POST"])
@@ -37,3 +40,4 @@ def deletecliente(id):
     db.session.delete(cliente)
     db.session.commit()
     return jsonify(cliente_schema.dump(cliente))
+>>>>>>> 8f034843bf90fdb3c5e7f9624284d025ddd1f836
