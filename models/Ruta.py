@@ -9,14 +9,13 @@ class Ruta(db.Model):
     latitud = db.Column(db.Integer)
     longitud = db.Column(db.Integer)
 
-    def __init__(self, idcliente):
+    def __init__(self, idcliente, latitud, longitud):
         self.idcliente = idcliente
+        self.longitud=longitud
+        self.latitud=latitud
 
-    def __init__(self, latitud):
-        self.latitud = latitud
-
-    def __init__(self, longitud):
-        self.longitud = longitud
+    
+        
 
 
 with app.app_context():
