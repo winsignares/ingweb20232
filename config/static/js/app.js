@@ -3,10 +3,12 @@ if ("geolocation" in navigator) {
         var latitud = position.coords.latitude;
         var longitud = position.coords.longitude;
 
-        // Mostrar la latitud y longitud en la página
+        alert(latitud)
+
+       /* // Mostrar la latitud y longitud en la página
         document.getElementById("latitud").textContent = latitud;
         document.getElementById("longitud").textContent = longitud;
-
+*/
         // Crear un objeto con los datos a enviar en formato JSON
         var data = {
             idcliente: 1,
@@ -32,4 +34,11 @@ if ("geolocation" in navigator) {
     });
 } else {
     console.log("El navegador no admite la geolocalización.");
+}
+
+function saludar() {
+    let nombre= document.getElementById('namecliente').value
+
+    alert(nombre)
+    
 }

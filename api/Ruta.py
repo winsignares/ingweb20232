@@ -19,6 +19,7 @@ def ruta():
 @ruta_ruta.route("/saveruta", methods=["POST"])
 def saveruta():
     data = request.get_json()
+    print(data)
     db.session.add(Ruta(**data))
     db.session.commit()
     return ruta_schema.jsonify(Ruta(**data))

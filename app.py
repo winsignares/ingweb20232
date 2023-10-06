@@ -11,7 +11,7 @@ app.register_blueprint(ruta_alertas, url_prefix="/api")
 
 @app.route("/")
 def index():
-    return render_template('layout.html')
+    return render_template('Bienvenido.html')
 
 @app.route("/savegps",methods=["POST"])
 def savegps():

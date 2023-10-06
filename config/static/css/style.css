@@ -1,0 +1,22 @@
+body {
+    margin: 10%;
+    padding: 20%;
+    background-size: 75%; /* Ajustar la imagen al tamaño de la ventana */
+    background-position: center; /* Centrar la imagen */
+    font-family: Arial, sans-serif; /* Tipo de fuente */
+    color: #ffffff; /* Color del texto */
+}
+
+header {
+    text-align: center;
+    padding: 100px 0;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+}
