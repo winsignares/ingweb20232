@@ -19,10 +19,9 @@ def ruta():
 @ruta_ruta.route("/saveruta", methods=["POST"])
 def saveruta():
     data = request.get_json()
-    new_ruta = (Ruta(**data))
-    db.session.add(new_ruta)
+    db.session.add(Ruta(**data))
     db.session.commit()
-    return "Ruta guardada con éxito"
+    return ruta_schema.jsonify(Ruta(**data))
 #Hector actualizar Ruta
 @ruta_ruta.route("/updateruta", methods=["PUT"])
 def updatecliente():

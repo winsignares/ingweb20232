@@ -5,8 +5,8 @@ class Ruta(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     idcliente = db.Column(db.Integer, db.ForeignKey('tblCliente.id'))
-    latitud = db.Column(db.Integer)
-    longitud = db.Column(db.Integer)
+    latitud = db.Column(db.String(250))
+    longitud = db.Column(db.String(250))
 
     def __init__(self, idcliente, latitud, longitud):
         self.idcliente = idcliente
