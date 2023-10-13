@@ -42,3 +42,33 @@ function saludar() {
     alert(nombre)
     
 }
+
+function savecliente(){
+    let var_nombre= document.getElementById('namecliente');
+    
+    var data = {
+        nombre: var_nombre.value
+    };
+
+    var config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+
+    let ruta= 'api/savecliente'
+
+    // Realizar una solicitud POST a la API en Python
+    axios.post(ruta, JSON.stringify(data), config)
+    .then(function (response) {
+        var_nombre.value="";
+        console.log('respuesta del backend:', response.data);
+        alertify.alert(response.data, function(){
+    alertify.message(response.data);
+  });
+    })
+    .catch(function (error) {
+        console.error('Error al enviar datos:', error);
+    });
+
+}
